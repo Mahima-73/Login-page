@@ -49,6 +49,19 @@ function getSignupFormErrors(firstname, email, password, repeatPassword){
     return errors;
 }
 
+function getLoginFormErrors(email, password){
+    let errors = []
+    if(email === '' || email == null){
+        errors.push("Email is required")
+        email_input.parentElement.classList.add('incorrect')
+    }
+    if(password === '' || password == null){
+        errors.push("Password is required")
+        password_input.parentElement.classList.add('incorrect')
+    }
+    return errors;
+}
+
 const allInputs = [firstname_input, email_input, password_input, repeat_password_input]
 
 allInputs.forEach(input => {
